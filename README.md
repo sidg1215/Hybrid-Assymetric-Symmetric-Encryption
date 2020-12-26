@@ -1,2 +1,9 @@
 # Hybrid-Assymetric-Symmetric-Encryption
-RSA Encryption serves as a way to encrypt messages with the use of one-way functions that are locked with a known number called the Public Key and a 'secret' number, which only the
+RSA Encryption serves as a way to encrypt messages with the use of one-way functions that are locked with a known number called the Public Key and a 'secret' number, which only the recepient has, called the Private Key. It is a form of assymetric encryption, where one key is used to encrypt a message (Public) and another to decrypt (Private). An encrypted message can only be correctly decrypted with the right private key. Although this method of encryption is EXTREMELY secure (compared to more naive encryption paradigms like the Caesar Cipher), it does come with some limitations. Once a message starts to get large enough, it cannot be encrypted properly.
+
+AES Encryption is another way to encrypt and decrypt message with the use of a single key. AES is a form of symmetric encryption, where one key is used to both encrypt and decrypt messages. Unlike RSA, AES doesn't have a limitation on the size of the size of the message we are trying to encrypt, and is faster in both the encryption and decryption process. However, the message can only be decrypted using a single key, which will be a problem if the receiver of the encrypted message does not know what the key is. But there is a way to get around this proble using a hybrid encryption system.
+
+First, we generate an AES key, which we will use to encrypt the message. Then, the AES key will be encrypted using the receiver's public key. Both the encrypted AES key and encrypted message will be sent to the receiver. The receiver can decrypt the encrypted key using their private key, and then after decrypt the encrypted message using the decrypted AES key.
+
+This is just a high level explanation of the system that I have implemented. To understand how both RSA and AES work in detail, please consult my notebooks, which are in this repo.
+
